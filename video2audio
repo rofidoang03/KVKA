@@ -1,0 +1,8 @@
+#!/bin/bash
+# video2audio
+# Convert video to audio using ffmpeg."
+
+read -p "Enter video file name: " v
+read -p "Enter audio file name: " a
+
+ffmpeg -i "${v} -vm -acodec libmp3lame ${a}
