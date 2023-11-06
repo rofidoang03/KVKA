@@ -8,6 +8,6 @@ mkdir "/root/video2audio"
 mkdir "/root/video2audio/conversion_results"
 program="video2audio"
 chmod a+rwx "${program}"
-cp "${program} /usr/bin/
+cp "${program}" /usr/bin/
 echo "Installation completed."
 exit 0
