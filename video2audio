@@ -6,7 +6,7 @@
 read -p "Enter video file name: " v
 read -p "Enter audio file name: " a
 
-ffmpeg -i "${v} -vm -acodec libmp3lame ${a}
+ffmpeg -i "${v}" -vm -acodec libmp3lame "${a}"
 mv "${a}" /root/video2audio/conversion_results
 
 echo "Conversion completed."
