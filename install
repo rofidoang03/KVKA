@@ -4,9 +4,10 @@
 
 apt-get update -y
 apt-get install ffmpeg -y
-mkdir /root/video2audio
-mkdir /root/video2audio/conversion_results
-chmod +x video2audio
-cp video2audio /usr/bin/
+mkdir "/root/video2audio"
+mkdir "/root/video2audio/conversion_results"
+program="video2audio"
+chmod a+rwx "${program}"
+cp "${program} /usr/bin/
 echo "Installation completed."
 exit 0
