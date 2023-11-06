@@ -1,0 +1,9 @@
+#!/bin/bash
+# install video2audio
+# https://github.com/rofidoang/video2audio
+
+apt-get update -y
+apt-get install ffmpeg -y
+cp src/video2audio /usr/bin/
+echo "Installation completed."
+exit 0
