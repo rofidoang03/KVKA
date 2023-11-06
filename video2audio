@@ -1,6 +1,6 @@
 #!/bin/bash
 # video2audio
-# Convert video to audio using ffmpeg."
+# Convert video to audio using Ffmpeg."
 # https://github.com/rofidoang03/video2audio.git
 
 read -p "Enter video file name: " v
