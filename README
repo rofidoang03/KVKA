@@ -2,9 +2,8 @@
 
 Convert video to audio using FFmpeg.
 
-# Installation
+## Installation
 
-```
 # clone the repository
 $ git clone https://github.com/rofidoang03/video2audio
 
@@ -16,4 +15,6 @@ $ chmod +x install
 
 # run the installation script
 $ ./install
-```
+
+## Usage 
+$ video2audio
