@@ -6,6 +6,6 @@ apt-get update -y
 apt-get install ffmpeg -y
 mkdir /root/video2audio
 mkdir /root/video2audio/conversion_results
-cp src/video2audio /usr/bin/
+cp video2audio /usr/bin/
 echo "Installation completed."
 exit 0
