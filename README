@@ -5,3 +5,10 @@ video2audio is a simple Bash script created to convert video files into audio fi
 Install
 
 To install video2audio, make sure you are in superuser (root) mode.
+
+$ apt-get update -y
+$ apt-get install git -y
+$ git clone https://github.com/rofidoang03/video2audio
+$ cd video2audio
+$ chmod a+rwx install
+$./install
