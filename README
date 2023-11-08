@@ -1,6 +1,6 @@
 video2audio 
 
-video2audio is a simple Bash script created to convert video files into audio files on the Linux (Debian/Ubuntu) operating system using the Ffmpeg software.
+video2audio is a simple Bash script created to convert video files into audio files on the Linux (Debian/Ubuntu) operating system using the FFmpeg software.
 
 Install
 
