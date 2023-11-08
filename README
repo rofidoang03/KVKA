@@ -1,3 +1,7 @@
 video2audio 
 
 video2audio is a simple Bash script created to convert video files into audio files using the Ffmpeg software.
+
+Install
+
+To install video2audio, make sure you are in superuser (root) mode.
