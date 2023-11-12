@@ -6,7 +6,7 @@ apt-get update -y >> /dev/null 2>&1
 echo "[+] Repositori berhasil diperbaharui."
 echo "[*] Menginstal FFmpeg."
 apt-get install ffmpeg -y >> /dev/null 2>&1
-echo "[+] Ffmpeg berhasil diinstal."
+echo "[+] FFmpeg berhasil diinstal."
 echo "[*] Menginstal pv."
 apt-get install pv -y >> /dev/null 2>&1
 echo "[+] pv berhasil diinstal."
