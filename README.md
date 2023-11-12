@@ -6,10 +6,6 @@
 
 ![kvka](https://github.com/rofidoang03/kvka/blob/main/logo.jpg)
 
-https://github.com/rofidoang03/kvka/assets/149921715/291dafa6-e624-4223-aaa1-b0f9c459428c
-
-
-
 kvka adalah skrip Bash sederhana yang dibuat untuk mengonversi file video menjadi file audio menggunakan [FFmpeg](https://www.ffmpeg.org/).
 
 ## Instalasi
@@ -30,7 +26,7 @@ $ ./instal
 
 Berikut ini adalah demonstrasi penggunaan kvka di sistem operasi Linux Lite Versi 6.6
 
-![](https://github.com/rofidoang03/kvka/blob/main/kvka.gif)
+https://github.com/rofidoang03/kvka/assets/149921715/291dafa6-e624-4223-aaa1-b0f9c459428c
 
 ## Kontribusi
 
