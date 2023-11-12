@@ -23,7 +23,7 @@ cek_koneksi_internet(){
     echo "[*] Mengecek koneksi internet."
     ping -c 1 google.com >> /dev/null 2>&1
     if [ $? -eq 0 ]; then
-        echo "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi..."
+        read -p "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi..." d
         instal_kvka
     else
         echo "[x] Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
