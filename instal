@@ -1,7 +1,8 @@
 #!/bin/bash
 
 instal_kvka(){
-    echo -e "\n[*] Memperbaharui repositori."
+    clear
+    echo -e "[*] Memperbaharui repositori."
     apt-get update -y >> /dev/null 2>&1
     echo "[+] Repositori berhasil diperbaharui."
     echo "[*] Menginstal FFmpeg."
@@ -23,7 +24,7 @@ cek_koneksi_internet(){
     sleep 3
     ping -c 1 google.com >> /dev/null 2>&1
     if [ $? -eq 0 ]; then
-        read -p "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi..." d
+        read -p "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi... " d
         instal_kvka
     else
         echo "[x] Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
