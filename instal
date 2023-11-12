@@ -20,7 +20,8 @@ instal_kvka(){
 }
 
 cek_koneksi_internet(){
-    echo "[*] Mengecek koneksi internet."
+    echo -e "\n[*] Mengecek koneksi internet."
+    sleep 3
     ping -c 1 google.com >> /dev/null 2>&1
     if [ $? -eq 0 ]; then
         read -p "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi..." d
