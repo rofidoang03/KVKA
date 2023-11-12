@@ -1,38 +1,43 @@
 #!/bin/bash
 
+b="\e[1;34m"
+m="\e[1;31m"
+h="\e[1;32m"
+r="\e[0m"
+
 # Fungsi untuk memeriksa hak akses root
 cek_root() {
     if [ "$EUID" -ne 0 ]; then
-        echo "[x] Jalankan sebagai root."
+        echo -e "${m}[x] ${r}Jalankan sebagai root."
         exit 1
     fi
 }
 
 # Fungsi untuk memperbaharui repositori
 memperbaharui_repositori() {
-    echo -e "[*] Memperbaharui repositori."
+    echo -e "${b}[*] ${r}Memperbaharui repositori."
     apt-get update -y || {
-        echo "[x] Gagal memperbaharui repositori."
+        echo -e "${m}[x] ${r}Gagal memperbaharui repositori."
         exit 1
     }
-    echo "[+] Repositori berhasil diperbaharui."
+    echo -e "${h}[+] {r}Repositori berhasil diperbaharui."
 }
 
 # Fungsi untuk menginstal dependensi
 instal_dependensi() {
-    echo "[*] Menginstal FFmpeg."
+    echo -e "${b}[*] ${r}Menginstal FFmpeg."
     apt-get install ffmpeg -y || {
-        echo "[x] Gagal menginstal FFmpeg."
+        echo -e "${m}[x] ${r}Gagal menginstal FFmpeg."
         exit 1
     }
-    echo "[+] FFmpeg berhasil diinstal."
+    echo -e "${h}[+] ${r}FFmpeg berhasil diinstal."
 
-    echo "[*] Menginstal pv."
+    echo -e "${b}[*] ${r}Menginstal pv."
     apt-get install pv -y || {
-        echo "[x] Gagal menginstal pv."
+        echo -e "${m}[x] ${r}Gagal menginstal pv."
         exit 1
     }
-    echo "[+] pv berhasil diinstal."
+    echo -e "${h}[+] ${r}pv berhasil diinstal."
 }
 
 # Fungsi untuk memindahkan program ke /usr/bin/
