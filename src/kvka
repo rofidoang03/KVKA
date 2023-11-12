@@ -16,9 +16,9 @@ if [ -e "$v" ]; then
     read -p "Masukkan nama file audio : " a
     echo -e "\n[*] Melakukan konversi..."
     ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
-    mv "${a}" /root/kvka/hasil_konversi
+    mv "${a}" /usr/share/kvka/hasil_konversi
     echo "[+] Konversi selesai."
-    echo "[+] Hasil konversi disimpan di folder '/root/kvka/hasil_konversi'."
+    echo "[+] Hasil konversi disimpan di folder '/usr/share/kvka/hasil_konversi'."
     exit 0
 
 else
