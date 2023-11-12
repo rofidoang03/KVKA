@@ -20,7 +20,7 @@ memperbaharui_repositori() {
         echo -e "${m}[x] ${r}Gagal memperbaharui repositori."
         exit 1
     }
-    echo -e "${h}[+] {r}Repositori berhasil diperbaharui."
+    echo -e "${h}[+] ${r}Repositori berhasil diperbaharui."
 }
 
 # Fungsi untuk menginstal dependensi
@@ -60,24 +60,24 @@ echo -e "\n"
 read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
 
 if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
-    echo -e "\n[*] Mengecek koneksi internet."
+    echo -e "\n${b}[*] ${r}Mengecek koneksi internet."
     sleep 3
     ping -c 1 google.com >> /dev/null 2>&1
 
     if [ $? -eq 0 ]; then
-        read -p "[+] Anda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... " d
-        echo -e "\n[*] Memulai proses instalasi."
+        read -p $'\e[1;32n[+] \e[0mAnda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... ' d
+        echo -e "\n${b}[*] ${r}Memulai proses instalasi."
 
         memperbaharui_repositori
         instal_dependensi
         pindahkan_program
 
-        echo -e "\n[+] Instalasi selesai."
+        echo -e "\n${h}[+] ${r}Instalasi selesai."
         sleep 1
-        echo "[+] Untuk menjalankan kvka ketikkan perintah 'kvka'."
+        echo -e "${h}[+] ${r}Untuk menjalankan kvka ketikkan perintah 'kvka'."
         exit 0
     else
-        echo "[x] Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
+        echo -e "${m}[x] ${r}Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
         exit 1
     fi
 
@@ -85,6 +85,6 @@ elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
     exit 0
 
 else
-    echo "[x] Masukan tidak valid."
+    echo -e "${m}[x] ${r}Masukan tidak valid."
     exit 1
 fi
