@@ -63,7 +63,7 @@ if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
         read -p "[+] Anda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... " d
         echo -e "\n[*] Memulai proses instalasi."
 
-        update_repositories
+        memperbaharuinya_repositori
         instal_dependensi
         pindahkan_program
 
