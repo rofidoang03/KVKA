@@ -11,7 +11,7 @@ echo "[*] Menginstal pv."
 apt-get install pv -y >> /dev/null 2>&1
 echo "[+] pv berhasil diinstal."
 mkdir -p "/root/kvka/hasil_konversi"
-program="src/kvka"
+program="kvka"
 chmod a+rwx "${program}"
 mv "${program}" /usr/bin/
 echo "[+] Instalasi selesai."
