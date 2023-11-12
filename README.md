@@ -24,11 +24,9 @@ $ ./instal
 
 ## Demonstrasi
 
-<video width="320" height="240" controls>
-  <source src="video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Berikut ini adalah demonstrasi penggunaan kvka di sistem operasi Linux Lite Versi 6.6
 
+![](https://github.com/rofidoang03/kvka/blob/main/kvka.gif)
 
 ## Kontribusi
 
