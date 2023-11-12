@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# Variabel warna
 b="\e[1;34m"
 m="\e[1;31m"
 h="\e[1;32m"
 r="\e[0m"
 
+# Membersihkan layar terminal
 clear
 
 # Fungsi untuk memeriksa hak akses root
