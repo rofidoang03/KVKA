@@ -26,7 +26,7 @@ $ ./instal
 
 Berikut ini adalah demonstrasi penggunaan kvka di sistem operasi Linux Lite Versi 6.6
 
-https://github.com/rofidoang03/kvka/assets/149921715/193b7db7-025c-4d7b-a122-d31cbac323b4
+https://github.com/rofidoang03/kvka/assets/149921715/4d8c2a0a-a5f1-4d10-b650-dcaa5b23d0fc
 
 ## Kontribusi
 
