@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Masukkan nama file video: " v
+read -p "Masukkan nama file audio: " a
+
+ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}"
+mv "${a}" /root/video2audio/conversion_results
+
+echo "Konversi selesai."
+echo "Hasil konversi disimpan di folder '/root/kvka/hasil_konversi'."
