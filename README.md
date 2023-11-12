@@ -8,7 +8,7 @@
 
 kvka adalah skrip Bash sederhana yang dibuat untuk mengonversi file video menjadi file audio menggunakan [FFmpeg](https://www.ffmpeg.org/).
 
-## Instalasi :wrench:
+## Instalasi
 
 Untuk menginstal kvka sangatlah mudah, Anda cukup mengetikkan perintah yang ada dibawah ini:
 
@@ -22,6 +22,6 @@ $ chmod a+rwx instal
 $ ./instal
 ```
 
-## Kontribusi :handshake:
+## Kontribusi
 
-Tentu, kami sangat mengharapkan partisipasi Anda dalam pengembangan kvka. Setiap kontribusi sangat berharga bagi kami!"
+Tentu, kami sangat mengharapkan partisipasi Anda dalam pengembangan kvka. Setiap kontribusi sangat berharga bagi kami."
