@@ -1,53 +1,13 @@
 #!/bin/bash
 
-instal_kvka(){
-    clear
-    echo -e "[*] Memperbaharui repositori."
-    apt-get update -y >> /dev/null 2>&1
-    echo "[+] Repositori berhasil diperbaharui."
-    echo "[*] Menginstal FFmpeg."
-    apt-get install ffmpeg -y >> /dev/null 2>&1
-    echo "[+] Ffmpeg berhasil diinstal."
-    echo "[*] Menginstal pv."
-    apt-get install pv -y >> /dev/null 2>&1
-    echo "[+] pv berhasil diinstal."
-    mkdir -p "/root/kvka/hasil_konversi"
-    program="src/kvka"
-    chmod a+rwx "${program}"
-    mv "${program}" /usr/bin/
-    echo "[+] Instalasi selesai."
-    sleep 1
-    echo "[+] Untuk menjalankan kvka ketikkan perintah 'kvka'."
+chmod a+rwx /src/*
+
+read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
+if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
+    ./cek_koneksi_internet
+elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
     exit 0
-}
-
-cek_koneksi_internet(){
-    echo -e "\n[*] Mengecek koneksi internet."
-    sleep 3
-    ping -c 1 google.com >> /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        read -p "[+] Anda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... " d
-        instal_kvka
-    else
-        echo "[x] Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
-    fi
-}
-
-nanya(){
-    read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
-    if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
-        cek_koneksi_internet
-    elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
-        exit 0
-    else
-        echo "[x] Masukan tidak valid."
-        exit 1
-    fi
-}
-
-if [ "$EUID" -ne 0 ]; then
-    echo "[x] Jalankan sebagai root."
+else
+    echo "[x] Masukan tidak valid."
     exit 1
 fi
-
-nanya
