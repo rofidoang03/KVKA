@@ -1,26 +1,5 @@
 #!/bin/bash
 
-nanya(){
-    read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
-    if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
-        instal_kvka
-    elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
-        exit 0
-    else
-        echo "Masukan tidak valid."
-        exit 1
-    fi
-}
-
-cek_koneksi_internet(){
-    ping -c 1 google.com >> /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        echo "Anda memiliki koneksi internet."
-    else
-        echo "Tidak ada koneksi internet."
-    fi
-}
-
 instal_kvka(){
     clear
     echo "[*] Memperbaharui repositori."
@@ -39,3 +18,28 @@ instal_kvka(){
     echo "[+] Instalasi selesai."
     exit 0
 }
+
+cek_koneksi_internet(){
+    echo "[*] Mengecek koneksi internet."
+    ping -c 1 google.com >> /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi..."
+        instal_kvka
+    else
+        echo "[x] Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
+    fi
+}
+
+nanya(){
+    read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
+    if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
+        cek_koneksi_internet
+    elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
+        exit 0
+    else
+        echo "Masukan tidak valid."
+        exit 1
+    fi
+}
+
+
