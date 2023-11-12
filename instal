@@ -16,6 +16,8 @@ instal_kvka(){
     chmod a+rwx "${program}"
     mv "${program}" /usr/bin/
     echo "[+] Instalasi selesai."
+    sleep 1
+    echo "[+] Untuk menjalankan kvka ketikkan perintah 'kvka'."
     exit 0
 }
 
@@ -24,7 +26,7 @@ cek_koneksi_internet(){
     sleep 3
     ping -c 1 google.com >> /dev/null 2>&1
     if [ $? -eq 0 ]; then
-        read -p "[+] Anda memiliki koneksi internet. Tekan Enter untuk melanjutkan proses instalasi... " d
+        read -p "[+] Anda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... " d
         instal_kvka
     else
         echo "[x] Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
