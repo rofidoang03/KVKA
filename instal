@@ -1,7 +1,7 @@
 #!/bin/bash
 
 instal_kvka(){
-    echo -e "\n\n[*] Memperbaharui repositori."
+    echo -e "\n[*] Memperbaharui repositori."
     apt-get update -y >> /dev/null 2>&1
     echo "[+] Repositori berhasil diperbaharui."
     echo "[*] Menginstal FFmpeg."
