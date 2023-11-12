@@ -48,7 +48,7 @@ pindahkan_peogram() {
 }
 
 # Skrip utama
-check_root
+cek_root
 
 echo -n "Selamat datang di menu instalasi kvka." | pv -qL 10
 echo -e "\n"
