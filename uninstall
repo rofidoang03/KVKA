@@ -1,6 +1,0 @@
-#!/bin/bash
-
-rm /usr/bin/video2audio
-apt-get remove ffmpeg -y
-rm -r /root/video2audio
-echo "video2audio successfully uninstalled."
