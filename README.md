@@ -15,6 +15,7 @@ Untuk menginstal kvka sangatlah mudah, Anda cukup mengetikkan perintah yang ada 
 ```
 $ sudo apt-get update
 $ sudo apt-get install git
+$ cd /usr/share
 $ git clone https://github.com/rofidoang03/kvka.git
 $ cd kvka
 $ chmod a+rwx instal
