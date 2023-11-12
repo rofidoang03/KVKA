@@ -1,15 +1,16 @@
 #!/bin/bash
 
-chmod a+rwx /src/*
+chmod a+rwx src/*
 
-/src/./cek_root
+src/./cek_root
 
 k="Selamat datang di menu instalasi kvka."
 echo -n "$k" | pv -qL 10
+echo -e "\n"
 
 read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
 if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
-    /src/./cek_koneksi_internet
+    src/./cek_koneksi_internet
 elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
     exit 0
 else
