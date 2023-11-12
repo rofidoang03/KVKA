@@ -36,7 +36,7 @@ instal_dependensi() {
 }
 
 # Fungsi untuk memindahkan program ke /usr/bin/
-pindahkan_peogram() {
+pindahkan_program() {
     program="src/kvka"
     mkdir -p "/root/kvka/hasil_konversi"
     chmod a+rwx "${program}"
@@ -63,7 +63,7 @@ if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
         read -p "[+] Anda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... " d
         echo -e "\n[*] Memulai proses instalasi."
 
-        memperbaharuinya_repositori
+        memperbaharui_repositori
         instal_dependensi
         pindahkan_program
 
