@@ -3,7 +3,7 @@
 clear
 
 k_1="Selamat datang di KVKA"
-k_2="KVKA adalah skrip Bash sederhana yang dibuat untuk mengonversi file video menjadi file audio pada sistem operasi Linux (Debian/Ubuntu) menggunakan perangkat lunak FFmpeg."
+k_2="KVKA adalah skrip Bash sederhana yang dibuat untuk mengonversi file video menjadi file audio menggunakan perangkat lunak FFmpeg."
 
 echo -n "$k_1" | pv -qL 10
 echo -e "\n"
