@@ -1,19 +1,20 @@
 #!/bin/bash
 
-clear
-
-echo "[*] Memperbaharui repositori."
-apt-get update -y >> /dev/null 2>&1
-echo "[+] Repositori berhasil diperbaharui."
-echo "[*] Menginstal FFmpeg."
-apt-get install ffmpeg -y >> /dev/null 2>&1
-echo "[+] Ffmpeg berhasil diinstal."
-echo "[*] Menginstal pv."
-apt-get install pv -y >> /dev/null 2>&1
-echo "[+] pv berhasil diinstal."
-mkdir -p "/root/kvka/hasil_konversi"
-program="src/kvka"
-chmod a+rwx "${program}"
-mv "${program}" /usr/bin/
-echo "[+] Instalasi selesai."
-exit 0
+instal_kvka(){
+    clear
+    echo "[*] Memperbaharui repositori."
+    apt-get update -y >> /dev/null 2>&1
+    echo "[+] Repositori berhasil diperbaharui."
+    echo "[*] Menginstal FFmpeg."
+    apt-get install ffmpeg -y >> /dev/null 2>&1
+    echo "[+] Ffmpeg berhasil diinstal."
+    echo "[*] Menginstal pv."
+    apt-get install pv -y >> /dev/null 2>&1
+    echo "[+] pv berhasil diinstal."
+    mkdir -p "/root/kvka/hasil_konversi"
+    program="src/kvka"
+    chmod a+rwx "${program}"
+    mv "${program}" /usr/bin/
+    echo "[+] Instalasi selesai."
+    exit 0
+}
