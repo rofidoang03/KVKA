@@ -6,7 +6,7 @@
 
 ![kvka](https://github.com/rofidoang03/kvka/blob/main/logo.jpg)
 
-kvka adalah skrip Bash sederhana yang dibuat untuk mengonversi file video menjadi file audio menggunakan [FFmpeg](https://www.ffmpeg.org/).
+kvka adalah skrip Bash sederhana yang dibuat untuk mengkonversi file video menjadi file audio menggunakan [FFmpeg](https://www.ffmpeg.org/).
 
 ## Instalasi
 
