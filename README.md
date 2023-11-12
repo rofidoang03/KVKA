@@ -22,6 +22,14 @@ $ chmod a+rwx instal
 $ ./instal
 ```
 
+## Demonstrasi
+
+<video width="320" height="240" controls>
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 ## Kontribusi
 
 Tentu, kami sangat mengharapkan partisipasi Anda dalam pengembangan kvka. Setiap kontribusi sangat berharga bagi kami."
