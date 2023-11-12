@@ -19,10 +19,10 @@ $ chmod a+rwx instal
 $ ./instal
 ```
 
-## Screenshot
-
-![](https://github.com/rofidoang03/kvka/blob/main/img/kvka.jpg)
-
 ## Kontribusi
 
 Tentu, kami sangat mengharapkan partisipasi Anda dalam pengembangan kvka. Setiap kontribusi sangat berharga bagi kami!"
+
+## Screenshot
+
+![](https://github.com/rofidoang03/kvka/blob/main/img/kvka.jpg)
