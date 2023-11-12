@@ -14,7 +14,7 @@ read -p "Masukkan nama file video: " v
 
 if [ -e "$v" ]; then
     read -p "Masukkan nama file audio: " a
-    echo "[*] Melakukan konversi..."
+    echo -e "\n[*] Melakukan konversi..."
     ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
     mv "${a}" /root/kvka/hasil_konversi
     echo "[+] Konversi selesai."
