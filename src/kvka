@@ -11,12 +11,17 @@ echo -n "$k_2" | pv -qL 10
 echo -e "\n"
 
 read -p "Masukkan nama file video: " v
-read -p "Masukkan nama file audio: " a
 
-echo "[*] Melakukan konversi..."
+if [ -e "$v" ]; then
+    read -p "Masukkan nama file audio: " a
+    echo "[*] Melakukan konversi..."
+    ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
+    mv "${a}" /root/kvka/hasil_konversi
+    echo "[+] Konversi selesai."
+    echo "[+] Hasil konversi disimpan di folder '/root/kvka/hasil_konversi'."
+    exit 0
 
-ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
-mv "${a}" /root/kvka/hasil_konversi
-
-echo "[+] Konversi selesai."
-echo "[+] Hasil konversi disimpan di folder '/root/kvka/hasil_konversi'."
+else
+    echo "[x] File '$v' tidak ditemukan."
+    exit 1
+fi
