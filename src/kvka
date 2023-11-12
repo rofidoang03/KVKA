@@ -16,7 +16,7 @@ read -p "Masukkan nama file audio: " a
 echo "[*] Melakukan konversi..."
 
 ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
-mv "${a}" /root/video2audio/conversion_results
+mv "${a}" /root/kvka/hasil_konversi
 
 echo "[+] Konversi selesai."
 echo "[+] Hasil konversi disimpan di folder '/root/kvka/hasil_konversi'."
