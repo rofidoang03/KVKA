@@ -3,7 +3,7 @@
 clear
 
 k_1="Selamat datang di kvka"
-k_2="kvka adalah skrip Bash sederhana yang dibuat untuk mengonversi file video menjadi file audio menggunakan FFmpeg."
+k_2="kvka adalah skrip Bash sederhana yang dibuat untuk mengkonversi file video menjadi file audio menggunakan FFmpeg."
 
 echo -n "$k_1" | pv -qL 10
 echo -e "\n"
