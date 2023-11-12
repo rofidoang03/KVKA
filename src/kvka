@@ -13,7 +13,7 @@ echo -e "\n"
 read -p "Masukkan nama file video: " v
 read -p "Masukkan nama file audio: " a
 
-ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}"
+ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
 mv "${a}" /root/video2audio/conversion_results
 
 echo "Konversi selesai."
