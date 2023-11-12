@@ -24,7 +24,7 @@ if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
         apt-get install pv -y >> /dev/null 2>&1
         echo "[+] pv berhasil diinstal."
         mkdir -p "/root/kvka/hasil_konversi"
-        program="kvka"
+        program="src/kvka"
         chmod a+rwx "${program}"
         mv "${program}" /usr/bin/
         echo "[+] Instalasi selesai."
