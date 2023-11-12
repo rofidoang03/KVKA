@@ -4,6 +4,7 @@ chmod a+rwx /src/*
 
 read -p "Apakah Anda ingin menginstal kvka [Y/n] : " n
 if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
+    ./cek_root
     ./cek_koneksi_internet
 elif [ "$n" == "N" ] || [ "$n" == "n" ]; then
     exit 0
