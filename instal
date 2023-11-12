@@ -5,6 +5,8 @@ m="\e[1;31m"
 h="\e[1;32m"
 r="\e[0m"
 
+clear
+
 # Fungsi untuk memeriksa hak akses root
 cek_root() {
     if [ "$EUID" -ne 0 ]; then
@@ -65,7 +67,7 @@ if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
     ping -c 1 google.com >> /dev/null 2>&1
 
     if [ $? -eq 0 ]; then
-        read -p $'\e[1;32n[+] \e[0mAnda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... ' d
+        read -p $'\e[1;32m[+] \e[0mAnda memiliki koneksi internet, tekan Enter untuk melanjutkan proses instalasi... ' d
         echo -e "\n${b}[*] ${r}Memulai proses instalasi."
 
         memperbaharui_repositori
@@ -74,7 +76,7 @@ if [ "$n" == "Y" ] || [ "$n" == "y" ]; then
 
         echo -e "\n${h}[+] ${r}Instalasi selesai."
         sleep 1
-        echo -e "${h}[+] ${r}Untuk menjalankan kvka ketikkan perintah 'kvka'."
+        echo -e "${h}[+] ${r}Untuk menjalankan kvka ketikkan perintah '${h}kvka${r}'."
         exit 0
     else
         echo -e "${m}[x] ${r}Anda tidak memiliki koneksi internet. Pastikan Anda terhubung ke internet untuk menginstal kvka."
