@@ -47,7 +47,7 @@ instal_dependensi() {
 # Fungsi untuk memindahkan program ke /usr/bin/
 pindahkan_program() {
     program="src/kvka"
-    mkdir -p "/root/kvka/hasil_konversi"
+    mkdir -p "/usr/share/kvka/hasil_konversi"
     chmod a+rwx "${program}"
     mv "${program}" /usr/bin/ || {
         # echo "[x] Gagal memindahkan program ke /usr/bin/."
