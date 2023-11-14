@@ -16,12 +16,6 @@ $ chmod a+rwx instal
 $ ./instal
 ```
 
-## Demonstrasi
-
-Berikut adalah demonstrasi penggunaan kvka di sistem operasi Linux Lite versi 6.6.
-
-https://github.com/rofidoang03/kvka/assets/149921715/4d8c2a0a-a5f1-4d10-b650-dcaa5b23d0fc
-
 ## Kontribusi
 
 Tentu, kami sangat mengharapkan partisipasi Anda dalam pengembangan kvka. Setiap kontribusi sangat berharga bagi kami."
