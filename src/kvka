@@ -23,7 +23,7 @@ if [ -e "$v" ]; then
     echo -e "\n${b}[*] ${r}Melakukan konversi..."
     ffmpeg -i "${v}" -vn -acodec libmp3lame "${a}" >> /dev/null 2>&1
     mv "${a}" /usr/share/kvka/hasil_konversi
-    echo -e "${h}[+] ${r}Konversi selesai."
+    echo -e "${h}\n[+] ${r}Konversi selesai."
     echo -e "${h}[+] ${r}Hasil konversi disimpan di folder '${h}/usr/share/kvka/hasil_konversi${r}'."
     exit 0
 
