@@ -57,9 +57,9 @@ def utama():
             file_audio = sys.argv[index_audio + 1]
             
             if not (validasi_ekstensi(file_video, '.mp4') and validasi_ekstensi(file_audio, '.mp3')):
-                print("Ekstensi file tidak valid. Pastikan file video dalam format .mp4 dan file audio dalam format .mp3")
+                print("Terjadi kesalahan: Ekstensi file tidak valid. Pastikan file video dalam format .mp4 dan file audio dalam format .mp3")
             elif not os.path.isfile(file_video):
-                print(f"File video '{file_video}' tidak ditemukan.")
+                print(f"Terjadi kesalahan: File video '{file_video}' tidak ditemukan.")
             else:
                 konversi_video_ke_audio(file_video, file_audio)
             
