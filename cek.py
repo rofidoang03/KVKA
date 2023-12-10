@@ -4,7 +4,28 @@ import numpy as np
 import sys
 
 def cek_sama(file1, file2):
-    # Fungsi cek_sama sama seperti sebelumnya
+    cap1 = cv2.VideoCapture(file1)
+    cap2 = cv2.VideoCapture(file2)
+
+    if not cap1.isOpened() or not cap2.isOpened():
+        return False
+
+    try:
+        while True:
+            ret1, frame1 = cap1.read()
+            ret2, frame2 = cap2.read()
+
+            if not ret1 or not ret2:
+                break
+
+            if frame1.shape != frame2.shape or not np.array_equal(frame1, frame2):
+                return False
+
+        return True
+
+    finally:
+        cap1.release()
+        cap2.release()
 
 def cek_file_sama(direktori):
     daftar_file = os.listdir(direktori)
