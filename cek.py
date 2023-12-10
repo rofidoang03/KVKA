@@ -40,12 +40,11 @@ def cek_file_sama(direktori):
                 file_sama.append((daftar_file[i], daftar_file[j]))
             else:
                 file_tidak_sama = True
-                print(f"{daftar_file[i]} dan {daftar_file[j]} tidak sama.")
+                print(f"[-] {daftar_file[i]} dan {daftar_file[j]} tidak sama.")
 
     if file_sama:
-        print("File yang sama ditemukan:")
         for file_pair in file_sama:
-            print(f"{file_pair[0]} dan {file_pair[1]}")
+            print(f"[+] {file_pair[0]} dan {file_pair[1]} sama.")
     else:
         print("Tidak ada file yang sama dalam direktori.")
 
@@ -55,3 +54,4 @@ def cek_file_sama(direktori):
 if __name__ == "__main__":
     direktori = "nama_direktori"  # Ganti dengan nama direktori yang ingin dicek
     cek_file_sama(direktori)
+    
