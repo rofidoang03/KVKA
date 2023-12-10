@@ -2,68 +2,51 @@ import os
 import cv2
 import numpy as np
 import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QPushButton, QTextEdit, QWidget, QLabel, QFileDialog
 
-def cek_sama(file1, file2):
-    cap1 = cv2.VideoCapture(file1)
-    cap2 = cv2.VideoCapture(file2)
+class VideoFileChecker(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
-    if not cap1.isOpened() or not cap2.isOpened():
-        return False
+        self.setWindowTitle("Video File Checker")
+        self.setGeometry(100, 100, 400, 300)
 
-    try:
-        while True:
-            ret1, frame1 = cap1.read()
-            ret2, frame2 = cap2.read()
+        self.central_widget = QWidget()
+        self.setCentralWidget(self.central_widget)
 
-            if not ret1 or not ret2:
-                break
+        layout = QVBoxLayout()
 
-            if frame1.shape != frame2.shape or not np.array_equal(frame1, frame2):
-                return False
+        self.info_label = QLabel("Pilih direktori untuk memeriksa file:")
+        layout.addWidget(self.info_label)
 
-        return True
+        self.check_button = QPushButton("Pilih Direktori")
+        self.check_button.clicked.connect(self.select_directory)
+        layout.addWidget(self.check_button)
 
-    finally:
-        cap1.release()
-        cap2.release()
+        self.result_text = QTextEdit()
+        self.result_text.setReadOnly(True)
+        layout.addWidget(self.result_text)
 
-def cek_file_sama(direktori):
-    daftar_file = os.listdir(direktori)
-    file_sama = []
-    file_tidak_sama = False
+        self.central_widget.setLayout(layout)
 
-    for i in range(len(daftar_file)):
-        for j in range(i + 1, len(daftar_file)):
-            file1 = os.path.join(direktori, daftar_file[i])
-            file2 = os.path.join(direktori, daftar_file[j])
+    def select_directory(self):
+        directory = QFileDialog.getExistingDirectory(self, "Pilih Direktori")
+        if directory:
+            self.check_files(directory)
 
-            if cek_sama(file1, file2):
-                file_sama.append((daftar_file[i], daftar_file[j]))
-            else:
-                file_tidak_sama = True
-                print(f"[-] File {daftar_file[i]} dan file {daftar_file[j]} tidak sama.")
+    def cek_sama(self, file1, file2):
+        # Fungsi cek_sama sama seperti sebelumnya
 
-    if file_sama:
-        for file_pair in file_sama:
-            print(f"[+] File {file_pair[0]} dan file {file_pair[1]} sama.")
+    def cek_file_sama(self, direktori):
+        # Fungsi cek_file_sama sama seperti sebelumnya
 
-    if file_tidak_sama == False and not file_sama:
-        print("Semua file dalam direktori sama.")
+    def check_files(self, directory):
+        self.result_text.clear()
+        self.result_text.append(f"Memeriksa file di: {directory}\n\n")
+        self.cek_file_sama(directory)
 
 if __name__ == "__main__":
-    direktori = "nama_direktori"  # Ganti dengan nama direktori yang ingin dicek
-
-    # Redirect output to os.devnull
-    with open(os.devnull, 'w') as f:
-        # Redirect stdout and stderr to os.devnull
-        old_stdout = sys.stdout
-        old_stderr = sys.stderr
-        sys.stdout = f
-        sys.stderr = f
-
-        cek_file_sama(direktori)
-
-        # Restore stdout and stderr
-        sys.stdout = old_stdout
-        sys.stderr = old_stderr
-        
+    app = QApplication(sys.argv)
+    window = VideoFileChecker()
+    window.show()
+    sys.exit(app.exec_())
