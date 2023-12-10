@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 
@@ -25,13 +26,28 @@ def cek_sama(file1, file2):
         cap1.release()
         cap2.release()
 
+def cek_file_sama(direktori):
+    daftar_file = os.listdir(direktori)
+    file_sama = []
+
+    for i in range(len(daftar_file)):
+        for j in range(i + 1, len(daftar_file)):
+            file1 = os.path.join(direktori, daftar_file[i])
+            file2 = os.path.join(direktori, daftar_file[j])
+
+            if cek_sama(file1, file2):
+                file_sama.append((daftar_file[i], daftar_file[j]))
+
+    return file_sama
+
 if __name__ == "__main__":
-    file1 = "video1.mp4"
-    file2 = "video2.mp4"
+    direktori = "nama_direktori"
+    file_sama = cek_file_sama(direktori)
 
-    sama = cek_sama(file1, file2)
-
-    if sama:
-        print("Dua buah file video sama.")
+    if file_sama:
+        print("File yang sama ditemukan:")
+        for file_pair in file_sama:
+            print(f"{file_pair[0]} dan {file_pair[1]}")
     else:
-        print("Dua buah file video tidak sama.")
+        print("Tidak ada file yang sama dalam direktori.")
+        
